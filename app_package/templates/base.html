@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+    <html>
+        <head>
+         <link rel="icon" href="/static/images/d.png">
+            <title>
+                {%if title%}
+                    {{title}}
+                {%else%}
+                    TAMS
+                {%endif%}
+            
+            </title>
+            
+            <link rel="stylesheet" href="/static/css/login.css">
+           
+        </head>
+        <body>
+        {%with messages=get_flashed_messages()%}
+            {%if messages%}
+            <ul>
+            {%for message in messages%}
+                <li>{{message}}</li>
+                {%endfor%}<!DOCTYPE HTML>
+    <html>
+        <head>
+         <link rel="icon" href="/static/images/d.png">
+            <title>
+                {%if title%}
+                    {{title}}
+                {%else%}
+                    A&T Bank
+                {%endif%}
+            
+            </title>
+            
+            <link rel="stylesheet" href="/static/css/login.css">
+           
+        </head>
+        <body>
+        {%with messages=get_flashed_messages()%}
+            {%if messages%}
+            <ul>
+            {%for message in messages%}
+                <li>{{message}}</li>
+                {%endfor%}
+             </ul>
+             {%endif%}
+        {%endwith%}
+         {% block content %}{% endblock %}
+        
+        </body>
+       
+      </html>
+             </ul><!DOCTYPE HTML>
+    <html>
+        <head>
+         <link rel="icon" href="/static/images/d.png">
+            <title>
+                {%if title%}
+                    {{title}}
+                {%else%}
+                    TAMS
+                {%endif%}
+            
+            </title>
+            
+            <link rel="stylesheet" href="/static/css/login.css">
+           
+        </head>
+        <body>
+        {%with messages=get_flashed_messages()%}
+            {%if messages%}
+            <ul>
+            {%for message in messages%}
+                <li>{{message}}</li>
+                {%endfor%}
+             </ul>
+             {%endif%}
+        {%endwith%}
+         {% block content %}{% endblock %}
+        
+        </body>
+       
+      </html>
+             {%endif%}
+        {%endwith%}
+         {% block content %}{% endblock %}
+        
+        </body>
+       
+      </html>
