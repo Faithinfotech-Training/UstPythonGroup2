@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  
+  
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  
+  
+  <ul class="navbar-nav">
+    <li class="nav-item ">
+      <a class="nav-link " style="padding-left:72.5em" href="">Go back to DashBoard</a>
+    </li>
+    
+  </ul>
+</nav>
+<div id="header"><p><h3>Batch Details</h3></p>
+</div>
+<fieldset>
+
+<table class="table table-dark">
+    <tr>
+        <th>Batch Id</th>
+        <th>Batch Name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Course Id</th>
+        <th>Status</th>
+        <th>Edit</th>
+   </tr>
+   {% for batch in batchs %}
+        <tr>
+            <td>{{batch._id}}</td>
+            <td>{{batch.b_name}}</td>
+            <td>{{batch.start_date}}</td>
+            <td>{{batch.end_date}}</td>
+            <td>{{batch.c_id}}</td>
+            <td>{{batch.b_status}}</td>
+            <td><a href="{{url_for('modify_batch', a=batch._id)}}">Modify Batch</a></td>
+        </tr>
+    {% endfor %}
+</table>
+</fieldset>
+<p><a href="{{url_for('add_batch')}}">Add batch</a></p>
+{% endblock %}

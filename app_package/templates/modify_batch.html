@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  
+  
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  
+  
+  <ul class="navbar-nav">
+    <li class="nav-item ">
+      <a class="nav-link " style="padding-left:72.5em" href="">Go back to DashBoard</a>
+    </li>
+    
+  </ul>
+</nav>
+<div id="header"><p><h3>Batch Details</h3></p>
+
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    
+    <legend>Modify-Batch</legend>
+
+    <table class="table table-dark">
+    <tr>
+    
+    <th>{{form.b_name.label}}{{form.b_name(value=batchs.b_name)}}</th>
+    <th>{{form.start_date.label}}{{form.start_date(size=32,value=batchs.start_date)}}</th>
+    <th>{{form.end_date.label}}{{form.end_date(size=32,value=batchs.end_date)}}</th>
+    <th>{{form.b_status.label}}{{form.b_status(value=batchs.b_status)}}</th>
+    <th>{{form.submit()}}</th>
+    
+    <th><a href="{{url_for('index')}}">Back to index</a></th>  
+    </tr>
+    </table> 
+</form>
+{% endblock %}
