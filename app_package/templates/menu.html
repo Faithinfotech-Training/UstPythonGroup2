@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  
+  
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  
+    <a class="navbar-brand" href="">Menu</a>
+  
+  <ul class="navbar-nav">
+    <li class="nav-item ">
+      <a class="nav-link " style="padding-left:72.5em" href="">Logout</a>
+    </li>
+    
+  </ul>
+</nav>
+
+<div class="bgmenu">
+    <img src="/static/images/d.png" style=" width: 115px;
+    height: 98px;">
+    <ul>
+        <li><a  href="{{url_for('add_resource')}}">Add a Resource</a></li>
+        <!-- <li><a  href="{{url_for('view_resource')}}">View all resources</a></li> -->
+       
+        
+    </ul>
+    
+     </div>
+
+
+    {% endblock %}

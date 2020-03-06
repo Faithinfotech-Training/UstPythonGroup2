@@ -1,0 +1,55 @@
+{%extends "base.html"%}
+{%block content%}
+<div class="container">
+          <div class="row">
+                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <table class="table table-secondary" style="width: 600px; margin:auto;margin-bottom: 50px;margin-top: 50px; ">
+         <tr>
+              <td>
+                    {{form.status.label}}
+              </td>
+              <td>
+                    {{form.status (value=usr.status)}}
+        {%for error in form.status.errors%}
+             <span style="color:red;">{{error}}</span>  
+        {%endfor%}
+              </td>
+         </tr>
+         <tr>
+              <td>
+                    {{ form.rent.label }}<br>
+              
+              </td>
+              <td> {{ form.rent(value=usr.rent) }}  {%for error in form.rent.errors%}
+                    <span style="color:red;">{{error}}</span>   
+               {%endfor%}</td>
+         </tr>
+         <tr>
+              <td>
+                    {{form.usetype.label}}
+              </td>
+              <td>
+                    {{form.usetype(value=usr.usetype)}}
+        {%for error in form.usetype.errors%}
+             <span style="color:red;">{{error}}</span>   
+        {%endfor%}
+              </td>
+         </tr>
+         <tr>
+              <td>
+                    {{form.submit}}
+              </td>
+         </tr>
+        <tr>
+             <td>
+                    <a href="{{url_for('menu')}}"> back to Resources</a>
+                   
+             </td>
+        </tr>
+      
+       
+     </table>
+</form>
+{%endblock%}

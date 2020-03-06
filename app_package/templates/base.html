@@ -1,73 +1,48 @@
 <!DOCTYPE HTML>
     <html>
         <head>
+                <link rel="stylesheet" href="/static/css/Tams.css">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
          <link rel="icon" href="/static/images/d.png">
             <title>
                 {%if title%}
                     {{title}}
                 {%else%}
-                    TAMS
+                    
                 {%endif%}
             
             </title>
             
-            <link rel="stylesheet" href="/static/css/login.css">
+            
            
         </head>
         <body>
-        {%with messages=get_flashed_messages()%}
-            {%if messages%}
-            <ul>
-            {%for message in messages%}
-                <li>{{message}}</li>
-                {%endfor%}<!DOCTYPE HTML>
-    <html>
-        <head>
-         <link rel="icon" href="/static/images/d.png">
-            <title>
-                {%if title%}
-                    {{title}}
-                {%else%}
-                    A&T Bank
-                {%endif%}
-            
-            </title>
-            
-            <link rel="stylesheet" href="/static/css/login.css">
-           
-        </head>
-        <body>
-        {%with messages=get_flashed_messages()%}
-            {%if messages%}
-            <ul>
-            {%for message in messages%}
-                <li>{{message}}</li>
-                {%endfor%}
-             </ul>
-             {%endif%}
-        {%endwith%}
-         {% block content %}{% endblock %}
-        
-        </body>
-       
-      </html>
-             </ul><!DOCTYPE HTML>
-    <html>
-        <head>
-         <link rel="icon" href="/static/images/d.png">
-            <title>
-                {%if title%}
-                    {{title}}
-                {%else%}
-                    TAMS
-                {%endif%}
-            
-            </title>
-            
-            <link rel="stylesheet" href="/static/css/login.css">
-           
-        </head>
-        <body>
+                <div id="header">
+                        <div id="logo">
+                            <div><img  src="/static/images/logo.png" alt=""></div>
+                          
+                       
+                        
+                       
+                                <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  
+                                        <a class="navbar-brand" href="#">Menu</a>
+                                      
+                                      <ul class="navbar-nav">
+                                        <li class="nav-item ">
+                                          <a class="nav-link " style="padding-left:66em" href="">Logout</a>
+                                        </li>
+                                        
+                                      </ul>
+                                    </nav>
+                                </div>
+    
+                        </div>
+                    
+                      <div calss="base-content">
         {%with messages=get_flashed_messages()%}
             {%if messages%}
             <ul>
@@ -78,14 +53,13 @@
              {%endif%}
         {%endwith%}
          {% block content %}{% endblock %}
-        
+        </div>
+         <div id="footer">
+                <div id="footer-content">
+                  <p>&copy;2020 All Rights Reserved. &nbsp;&nbsp; Design by <a href="">UST-pythongroup2 </a>.</p>
+                </div>
+              </div>
         </body>
        
       </html>
-             {%endif%}
-        {%endwith%}
-         {% block content %}{% endblock %}
-        
-        </body>
-       
-      </html>
+             
