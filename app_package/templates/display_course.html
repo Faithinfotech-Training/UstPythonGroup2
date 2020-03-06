@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		  
+<p><h1>Courses</h1></p>
+<p ><a href="{{url_for('addcourse')}}">Add Course</a></p>
+<table class="table table-dark " style="border-block-color: #11181f; width:1000px; margin: auto;">
+	<tr>
+		<th>Number</th>
+		<th>Course name</th>
+		<th>Fee</th>
+		<th>Duration of course in days</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Action</th>
+      
+	</tr>
+
+	{% for cour in course %}
+	<tr>
+		<td>{{cour._id}}</td>
+		<td>{{cour.name}}</td>
+		<td>{{cour.fee}}</td>
+		<td>{{cour.duration}}</td>
+		<td>{{cour.description}}</td>
+        <td>{{cour.status}}</td>
+        <td><a href="{{url_for('update_course',a=cour._id)}}">UPDATE</a></td>
+      
+	</tr>
+	{% endfor %}
+</table>
+
+{% endblock %}

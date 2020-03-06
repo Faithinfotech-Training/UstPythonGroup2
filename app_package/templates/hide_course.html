@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel='stylesheet' href='/static/css/hello.css'>
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+	<fieldset>
+	<legend>Hide Coures</legend>
+	<p>{{form.cid.label}}{{form.cid(size=32,autofocus="true")}}
+	{% for error in form.cid.errors %}
+		<span style="color:red";>{{error}}</span>
+    {% endfor %}</p>
+    <p>{{form.status.label}}{{form.status(size=32,autofocus="true")}}
+        {% for error in form.status.errors %}
+            <span style="color:red";>{{error}}</span>
+        {% endfor %}</p>
+	<p>{{form.submit()}}</p>
+	</fieldset>
+<p><a href="{{url_for('index')}}">Back to menu</a></p>
+</form>
+
+{% endblock %}
