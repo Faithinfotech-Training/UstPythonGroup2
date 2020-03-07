@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootclass="table table-dark"strap/4.4.1/js/bootstrap.min.js"></script>
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <h3 style="color:#29aad1;">Edit the enquiry details</h3>
+    <fieldset>
+    <table class="table table-light">
+    <tr>
+       <th> {{form.name.label}}</th>
+       <td>{{form.name(size=32,autofocus=True,value=enquiry.name)}}</td>
+   
+    </tr>    
+    <tr>
+        <th>{{form.mobno.label}}</th>
+        <td>{{form.mobno(size=32,value=enquiry.mobno)}}</td>
+    </tr>
+        
+    <tr>
+        <th>{{form.email.label}}</th>
+        <td>{{form.email(size=32,value=enquiry.email)}}</td>
+    </tr>
+    <tr>
+        <th>{{form.yearofpass.label}}</th>
+        <td>{{form.yearofpass(size=32,value=enquiry.yearofpass)}}</td>
+        
+    </tr>
+    <tr>
+        <th>{{form.highqual.label}}</th>
+        <td>{{form.highqual(size=32,value=enquiry.highqual)}}</td>
+            
+    </tr>
+    <tr>
+    `  <th> {{form.location.label}}</th>
+        <td>{{form.location(size=32,value=enquiry.location)}}</td>
+                
+    </tr>
+    <tr>
+        <th> {{form.prefercourse.label}}</th>
+        <td>{{form.prefercourse(value=enquiry.prefercourse)}}</td>
+                    
+    </tr>
+    <tr>
+        <th> {{form.source.label}}</th>
+        <td>{{form.source(value=enquiry.source)}}</td>
+                    
+    </tr>
+    <tr>
+        <th> {{form.status.label}}</th>
+        <td>{{form.status(value=enquiry.status)}}</td>
+    </tr>
+    <tr><td></td>
+        <td>{{form.submit()}}</td>
+    </tr>
+    <tr><td></td>
+        <td><a href="{{url_for('view_enquiry')}}">Back to Menu..</td> 
+</tr>
+</table>
+    </fieldset> 
+      
+</form>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<h3><center>Enquiries</center></h3>
+<fieldset>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            
+            <th>Name</th>
+            <th>Mobile No</th>
+            <th>Email</th>
+            <th>Year of Passout</th>
+            <th>Highest Qualification</th>
+            <th>Location</th>
+            <th>Prefered Course</th>
+            <th>Source</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        {% for e in enquiries %}
+            <tr>
+                
+                <td>{{e.name}}</td>
+                <td>{{e.mobno}}</td>
+                <td>{{e.email}}</td>
+                <td>{{e.yearofpass}}</td>
+                <td>{{e.highqual}}</td>
+                <td>{{e.location}}</td>
+                <td>{{e.prefercourse}}</td>
+                <td>{{e.source}}</td>
+                <td>{{e.status}}</td>
+                <td><a href="{{url_for('update_enquiry',enqid=e._id)}}">Edit</a></td>
+            </tr>
+        {% endfor %}  
+        <tr><td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="{{url_for('add_enquiry')}}">Add enquiry</a></td>
+          <td></td>
+    </tr>          
+    </table> 
+    <p></p> 
+</fieldset>                   
+           
+{% endblock %}
