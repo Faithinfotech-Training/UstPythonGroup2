@@ -23,15 +23,17 @@
                 <div id="header">
                         <div id="logo">
                             <div><img  src="/static/images/logo.png" alt=""></div>
-                          
-                       
-                        
-                       
                                 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  
-                                        <a class="navbar-brand" href="#">Menu</a>
-                                      
                                       <ul class="navbar-nav">
+                                          <li class="nav-item dropdown">
+                                              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                                MENU
+                                              </a>
+                                              <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="{{url_for('view_resource')}}">Resources</a>
+                                                <a class="dropdown-item" href="{{url_for('display_course')}}">Courses</a>
+                                                <a class="dropdown-item" href="{{url_for('display_batchs')}}">Batches</a>
+                                              </div></li>
                                         <li class="nav-item ">
                                           <a class="nav-link " style="padding-left:66em" href="">Logout</a>
                                         </li>

@@ -7,4 +7,4 @@ app=Flask(__name__)
 
 app.config.from_object(Config)
 mongo=PyMongo(app)
-from app_package import resroutes
+from app_package import resroutes,croutes,routes

@@ -4,9 +4,9 @@ from app_package import app,mongo
 from app_package.cforms import AddCourseForm,UpdateCourseForm
 c_id=0
 check=True
-@app.route("/", methods=["GET","POST"])
-def index():
-    return redirect(url_for("display_course"))
+# @app.route("/", methods=["GET","POST"])
+# def index():
+#     return redirect(url_for("display_course"))
        
 
 @app.route("/coursemenu")  

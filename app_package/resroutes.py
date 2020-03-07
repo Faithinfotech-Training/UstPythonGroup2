@@ -6,9 +6,9 @@ from app_package.resforms import AddResourceForm,UpdateResourceForm
 check=True
 r_id=0
 
-@app.route("/")
-def menu():
-    return redirect(url_for("view_resource"))
+# @app.route("/")
+# def menu():
+#     return redirect(url_for("view_resource"))
 
 @app.route("/add_resource",methods=['GET','POST'])
 def add_resource():

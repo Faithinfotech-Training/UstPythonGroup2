@@ -9,7 +9,7 @@ from app_package.forms import AddBatchForm, ModifyBatchForm
 @app.route("/",methods=["GET","POST"])
 
 def index():
-    return redirect(url_for("display_batchs"))
+    return render_template("base.html")
 
 
 
@@ -19,7 +19,7 @@ check=True
 @app.route("/add_batch",methods=["GET","POST"])
 
 def add_batch():
-    global batch_id
+    global b_id
     global check
     form=AddBatchForm()
     if form.validate_on_submit():
@@ -32,26 +32,26 @@ def add_batch():
             else:
                 batch=batch_col.find().sort("_id",-1).limit(1)
                 tmp=batch.next()
-                batch_id=tmp["_id"]    
-        batch_id+=1
+                b_id=tmp["_id"]    
+        b_id+=1
 
         if form.start_date.data>form.end_date.data:
             flash("end date is less than start date")
             return render_template("add_batch.html",form=form)
         else:
-            values=[batch_id,form.b_name.data,form.start_date.data,form.end_date.data,form.b_status.data,form.c_id.data]
+            values=[b_id,form.b_name.data,form.start_date.data,form.end_date.data,form.b_status.data,form.c_id.data]
             batch=dict(zip(fields,values))
 
         
 
             batch_col=mongo.db.batchs
             tmp=batch_col.insert_one(batch)
-            if tmp.inserted_id==batch_id:
+            if tmp.inserted_id==b_id:
                 flash("New batch added")
-                return redirect(url_for("index"))
+                return redirect(url_for("display_batchs"))
             else:
                 flash("Problem adding batch")
-                return redirect(url_for("index"))
+                return redirect(url_for("display_batchs"))
     else:
         return render_template("add_batch.html",form=form)
 
